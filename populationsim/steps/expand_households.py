@@ -82,8 +82,8 @@ def expand_households():
 
         # now make a hh_id choice for each group_id in expanded_weights
         def chooser(group_id):
-            hh_ids = group_hh_probs[int(group_id)][HH_IDS] ### EDIT MARGARET ATKINSON JUNE22
-            hh_probs = group_hh_probs[int(group_id)][HH_PROBS]  ### EDIT MARGARET ATKINSON JUNE22
+            hh_ids = group_hh_probs[int(group_id)][HH_IDS] 
+            hh_probs = group_hh_probs[int(group_id)][HH_PROBS]
             return prng.choice(hh_ids, p=hh_probs)
         expanded_weights[household_id_col] = \
             expanded_weights.group_id.apply(chooser, convert_dtype=True,)
